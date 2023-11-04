@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Header from "./Components/UI/Header";
 import Search from "./Components/UI/Search";
+import Filter from "./Components/UI/Filter";
 
 function App() {
   const [countries, setCountries] = useState();
@@ -23,6 +24,7 @@ function App() {
       <Header />
       <section className="p-5">
         <Search />
+        <Filter />
         {countries && (
           <h1 className="bg-blue-300 mt-10">Countries Data is present</h1>
         )}

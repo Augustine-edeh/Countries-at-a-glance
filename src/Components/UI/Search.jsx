@@ -1,7 +1,7 @@
 const Search = () => {
   return (
-    <div className="flex items-center max-w-md mx-auto rounded-lg shadow-md">
-      <div>
+    <div className="flex items-center justify-center max-w-md mx-auto rounded-lg shadow-md  bg-blue-500">
+      <div className="h-full">
         <label
           className="grid place-content-center  w-12 h-12 text-gray-500 rounded-l-lg bg-white"
           htmlFor="search"
@@ -21,7 +21,7 @@ const Search = () => {
           </svg>
         </label>
       </div>
-      <div className="w-full">
+      <div className="w-full h-full">
         <input
           id="search"
           className="w-full px-4 h-12 py-1 text-gray-800 rounded-r-lg focus:outline-none bg-white"
