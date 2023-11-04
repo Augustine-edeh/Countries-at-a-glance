@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Header from "./Components/UI/Header";
 
 function App() {
   const [countries, setCountries] = useState();
@@ -16,7 +17,14 @@ function App() {
         console.log(error.message);
       });
   }, []);
-  return <div></div>;
+  return (
+    <div className="h-screen w-screen bg-gray-50">
+      <Header />
+      {countries && <h1 className="bg-blue-300">Countries Data is present</h1>}
+      App
+      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+    </div>
+  );
 }
 
 export default App;
