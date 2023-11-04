@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Header from "./Components/UI/Header";
 import Search from "./Components/UI/Search";
 import Filter from "./Components/UI/Filter";
+import CountryCard from "./Components/UI/CountryCard";
 
 function App() {
   const [countries, setCountries] = useState();
@@ -14,7 +15,10 @@ function App() {
           throw new Error("Could not fetch data");
         }
       })
-      .then((data) => setCountries(data))
+      .then((data) => {
+        console.log(data);
+        setCountries(data);
+      })
       .catch((error) => {
         console.log(error.message);
       });
@@ -28,8 +32,11 @@ function App() {
         {countries && (
           <h1 className="bg-blue-300 mt-10">Countries Data is present</h1>
         )}
-        App
-        <h1 className="text-3xl font-bold underline">Hello world!</h1>
+
+        {countries &&
+          countries.map((country) => (
+            <CountryCard data={country} key={Math.random().toString()} />
+          ))}
       </section>
     </main>
   );
