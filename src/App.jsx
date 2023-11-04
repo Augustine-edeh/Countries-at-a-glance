@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Header from "./Components/UI/Header";
+import Search from "./Components/UI/Search";
 
 function App() {
   const [countries, setCountries] = useState();
@@ -18,12 +19,17 @@ function App() {
       });
   }, []);
   return (
-    <div className="h-screen w-screen bg-gray-50">
+    <main className="h-screen w-screen bg-gray-50">
       <Header />
-      {countries && <h1 className="bg-blue-300">Countries Data is present</h1>}
-      App
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-    </div>
+      <section className="p-5">
+        <Search />
+        {countries && (
+          <h1 className="bg-blue-300 mt-10">Countries Data is present</h1>
+        )}
+        App
+        <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      </section>
+    </main>
   );
 }
 
