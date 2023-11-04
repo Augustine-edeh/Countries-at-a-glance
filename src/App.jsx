@@ -3,6 +3,7 @@ import Header from "./Components/UI/Header";
 import Search from "./Components/UI/Search";
 import Filter from "./Components/UI/Filter";
 import CountryCard from "./Components/UI/CountryCard";
+import Container from "./Components/UI/Container";
 
 function App() {
   const [countries, setCountries] = useState();
@@ -32,11 +33,12 @@ function App() {
         {countries && (
           <h1 className="bg-blue-300 mt-10">Countries Data is present</h1>
         )}
-
-        {countries &&
-          countries.map((country) => (
-            <CountryCard data={country} key={Math.random().toString()} />
-          ))}
+        <Container>
+          {countries &&
+            countries.map((country) => (
+              <CountryCard data={country} key={Math.random().toString()} />
+            ))}
+        </Container>
       </section>
     </main>
   );
