@@ -7,6 +7,10 @@ import Container from "./Components/UI/Container";
 
 function App() {
   const [countries, setCountries] = useState();
+
+  const underConstructionNote =
+    " 🚧 Project Under Construction 🚧\n\nThanks for stopping by! This project is currently under development and we&apos;re crafting an amazing responsive experience for you. For the best adventure at this time, we recommend viewing it on your mobile device. \nStay tuned for updates and thank youfor your patience. \n \n-Country-Pedia Team 🚀📱 ";
+
   useEffect(() => {
     fetch("https://restcountries.com/v3.1/all")
       .then((response) => {
@@ -18,6 +22,7 @@ function App() {
       })
       .then((data) => {
         console.log(data);
+        alert(underConstructionNote);
         setCountries(data);
       })
       .catch((error) => {
