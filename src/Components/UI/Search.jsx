@@ -1,9 +1,9 @@
 const Search = () => {
   return (
-    <div className="flex shadow-xl h-14 w-96 rounded-xl">
+    <div className="flex shadow-xl h-16 w-96 rounded-lg">
       <div className="w-1/12">
         <label
-          className="grid place-content-center rounded-l-xl w-12 h-full text-gray-500 bg-white"
+          className="grid place-content-center rounded-l-lg w-12 h-full text-gray-500 bg-white"
           htmlFor="search"
         >
           <svg
@@ -24,7 +24,7 @@ const Search = () => {
       <div className="w-11/12">
         <input
           id="search"
-          className="w-full px-6 h-full py-1 text-gray-800  focus:outline-none rounded-r-xl bg-white"
+          className="w-full px-6 h-full py-1 text-gray-800  focus:outline-none rounded-r-lg bg-white"
           placeholder="Search for a country..."
         />
       </div>
