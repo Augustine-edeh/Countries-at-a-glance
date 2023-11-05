@@ -1,6 +1,6 @@
 function Filter() {
   return (
-    <select id="filter" className="px-5 h-14 bg-white shadow-xl">
+    <select id="filter" className="px-5 h-14 bg-white shadow-xl rounded-xl">
       <option value="">Filter by Region</option>
       <option value="">America</option>
       <option value="">Asia</option>
