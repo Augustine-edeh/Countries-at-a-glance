@@ -31,9 +31,9 @@ function App() {
   }, []);
 
   return (
-    <main className="h-screen w-screen bg-gray-50">
+    <section className="h-screen w-screen bg-gray-50">
       <Header />
-      <section className="p-5">
+      <main className="p-5 md:p-10 xl:px-40 2xl:px-72">
         <Container
           styleClasses={"mt-5 mb-14 flex justify-between  flex-wrap gap-12"}
         >
@@ -41,7 +41,11 @@ function App() {
           <Filter />
         </Container>
 
-        <Container styleClasses={"flex flex-wrap justify-center gap-10"}>
+        <Container
+          styleClasses={
+            "flex flex-wrap justify-around gap-5 lg:gap-10 bg-red-100"
+          }
+        >
           {countries &&
             countries.map((country) => (
               <CountryCard
@@ -50,8 +54,8 @@ function App() {
               />
             ))}
         </Container>
-      </section>
-    </main>
+      </main>
+    </section>
   );
 }
 
