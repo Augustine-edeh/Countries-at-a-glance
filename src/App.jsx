@@ -42,9 +42,7 @@ function App() {
         </Container>
 
         <Container
-          styleClasses={
-            "flex flex-wrap justify-around gap-5 lg:gap-10 bg-red-100"
-          }
+          styleClasses={"flex flex-wrap justify-around gap-5 lg:gap-10"}
         >
           {countries &&
             countries.map((country) => (
