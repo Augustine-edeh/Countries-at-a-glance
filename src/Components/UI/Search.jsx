@@ -1,6 +1,6 @@
 const Search = () => {
   return (
-    <div className="flex shadow-lg h-14 w-96 rounded-xl">
+    <div className="flex shadow-xl h-14 w-96 rounded-xl">
       <div className="w-1/12">
         <label
           className="grid place-content-center rounded-l-xl w-12 h-full text-gray-500 bg-white"
