@@ -1,8 +1,8 @@
-function Container(props) {
+function Container({ styleClasses, children }) {
   return (
-    <section className="mt-3 flex flex-wrap justify-center gap-5">
+    <section className={styleClasses}>
       {/* Rememberrto remove mt-3 above  */}
-      {props.children}
+      {children}
     </section>
   );
 }
