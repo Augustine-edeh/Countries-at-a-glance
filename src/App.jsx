@@ -34,7 +34,9 @@ function App() {
     <main className="h-screen w-screen bg-gray-50">
       <Header />
       <section className="p-5">
-        <Container styleClasses={"mt-3 flex justify-between  flex-wrap gap-12"}>
+        <Container
+          styleClasses={"mt-5 mb-14 flex justify-between  flex-wrap gap-12"}
+        >
           <Search />
           <Filter />
         </Container>
