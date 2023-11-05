@@ -1,6 +1,5 @@
 const Search = () => {
   return (
-    // <div className="flex items-center justify-center max-w-md mx-auto rounded-lg shadow-md  bg-blue-500"></div>
     <div className="flex shadow-lg h-14 w-96 rounded-xl">
       <div className="w-1/12">
         <label
