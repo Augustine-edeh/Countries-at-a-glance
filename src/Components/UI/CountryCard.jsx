@@ -10,7 +10,6 @@ function CountryCard({ countryData }) {
       </section>
       <section className="px-10 pt-3 pb-10">
         <p className="font-bold">{countryData.name.common}</p>
-        {countryData.flag}
         <p>
           <span className="font-bold">Population: </span>
           {countryData.population}
