@@ -75,7 +75,7 @@ function App() {
         {countries && (
           <h1 className="bg-blue-300 mt-10">Countries Data is present</h1>
         )}
-        <Container styleClasses={"mt-3 flex flex-wrap justify-center gap-5"}>
+        <Container styleClasses={"mt-3 flex flex-wrap justify-center gap-10"}>
           {countries &&
             countries.map((country) => (
               <CountryCard

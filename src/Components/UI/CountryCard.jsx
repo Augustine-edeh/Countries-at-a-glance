@@ -1,6 +1,6 @@
 function CountryCard({ countryData }) {
   return (
-    <div className="flex  flex-col shadow-lg h-15 bg-white rounded-lg overflow-hidden w-72">
+    <div className="flex  flex-col shadow-lg h-15 bg-white rounded-lg overflow-hidden w-72 mb-10">
       <section className="h-40">
         <img
           src={countryData.flags.png}
