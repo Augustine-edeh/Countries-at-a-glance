@@ -41,7 +41,10 @@ function App() {
         <Container>
           {countries &&
             countries.map((country) => (
-              <CountryCard data={country} key={Math.random().toString()} />
+              <CountryCard
+                countryData={country}
+                key={Math.random().toString()}
+              />
             ))}
         </Container>
       </section>
