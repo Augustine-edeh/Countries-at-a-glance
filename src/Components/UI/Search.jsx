@@ -1,4 +1,9 @@
-const Search = () => {
+const Search = (props) => {
+  const changeHandler = (event) => {
+    // console.log(event.target.value);
+    props.onSearch(event.target.value);
+  };
+
   return (
     <div className="flex shadow-xl h-16 w-96 rounded-lg">
       <div className="w-1/12">
@@ -26,6 +31,7 @@ const Search = () => {
           id="search"
           className="w-full px-6 h-full py-1 text-gray-800  focus:outline-none rounded-r-lg bg-white"
           placeholder="Search for a country..."
+          onChange={changeHandler}
         />
       </div>
     </div>

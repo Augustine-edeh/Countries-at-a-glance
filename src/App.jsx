@@ -7,6 +7,18 @@ import Container from "./Components/UI/Container";
 
 function App() {
   const [countries, setCountries] = useState();
+  const [result, setResult] = useState();
+
+  const searchHandler = (searchValue) => {
+    // console.log(searchValue);
+    setResult(
+      countries.filter((country) =>
+        // country.name.toLowerCase() == searchValue.toLowerCase()
+        // country.region.toLowerCase() === searchValue.toLowerCase()
+        country.name.common.toLowerCase().includes(searchValue.toLowerCase())
+      )
+    );
+  };
 
   const underConstructionNote =
     " 🚧 Project Under Construction 🚧\n\nThanks for stopping by! This project is currently under development and we&apos;re crafting an amazing responsive experience for you. For the best adventure at this time, we recommend viewing it on your mobile device. \nStay tuned for updates and thank youfor your patience. \n \n-Country-Pedia Team 🚀📱 ";
@@ -24,6 +36,7 @@ function App() {
         console.log(data);
         alert(underConstructionNote);
         setCountries(data);
+        setResult(data);
       })
       .catch((error) => {
         console.log(error.message);
@@ -37,7 +50,7 @@ function App() {
         <Container
           styleClasses={"mt-5 mb-14 flex justify-between  flex-wrap gap-12"}
         >
-          <Search />
+          <Search onSearch={searchHandler} />
           <Filter />
         </Container>
 
@@ -45,7 +58,7 @@ function App() {
           styleClasses={"flex flex-wrap justify-around gap-5 lg:gap-10"}
         >
           {countries &&
-            countries.map((country) => (
+            result.map((country) => (
               <CountryCard
                 countryData={country}
                 key={Math.random().toString()}
