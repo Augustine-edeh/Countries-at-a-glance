@@ -10,18 +10,15 @@ function App() {
   const [result, setResult] = useState();
 
   const searchHandler = (searchValue) => {
-    // console.log(searchValue);
     setResult(
       countries.filter((country) =>
-        // country.name.toLowerCase() == searchValue.toLowerCase()
-        // country.region.toLowerCase() === searchValue.toLowerCase()
         country.name.common.toLowerCase().includes(searchValue.toLowerCase())
       )
     );
   };
 
   const underConstructionNote =
-    " 🚧 Project Under Construction 🚧\n\nThanks for stopping by! This project is currently under development and we&apos;re crafting an amazing responsive experience for you. For the best adventure at this time, we recommend viewing it on your mobile device. \nStay tuned for updates and thank youfor your patience. \n \n-Country-Pedia Team 🚀📱 ";
+    " 🚧 Project Under Construction 🚧\n\nThanks for stopping by! This project is currently under development and we're crafting an amazing responsive experience for the best adventure, just for you.\n \n-Country-Pedia Team 🚀📱 ";
 
   useEffect(() => {
     fetch("https://restcountries.com/v3.1/all")
