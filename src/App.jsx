@@ -51,7 +51,7 @@ function App() {
   }, []);
 
   return (
-    <section className="h-screen w-screen bg-gray-50">
+    <section className="h-screen w-screen bg-lightBg dark:bg-darkBg">
       <Header />
       <main className="p-5 md:p-10 xl:px-40 2xl:px-72">
         <Container
