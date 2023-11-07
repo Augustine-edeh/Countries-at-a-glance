@@ -17,6 +17,14 @@ function App() {
     );
   };
 
+  const filterHandler = (region) => {
+    setResult(
+      countries.filter((country) =>
+        country.region.toLowerCase().includes(region.toLowerCase())
+      )
+    );
+  };
+
   const underConstructionNote =
     " 🚧 Project Under Construction 🚧\n\nThanks for stopping by! This project is currently under development and we're crafting an amazing responsive experience for the best adventure, just for you.\n \n-Country-Pedia Team 🚀📱 ";
 
@@ -48,7 +56,7 @@ function App() {
           styleClasses={"mt-5 mb-14 flex justify-between  flex-wrap gap-12"}
         >
           <Search onSearch={searchHandler} />
-          <Filter />
+          <Filter onFilter={filterHandler} />
         </Container>
 
         <Container
