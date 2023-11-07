@@ -12,7 +12,9 @@ function App() {
   const searchHandler = (searchValue) => {
     setResult(
       countries.filter((country) =>
-        country.name.common.toLowerCase().includes(searchValue.toLowerCase())
+        country.name.common
+          .toLowerCase()
+          .includes(searchValue.trim().toLowerCase())
       )
     );
   };
