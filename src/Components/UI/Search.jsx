@@ -2,6 +2,10 @@ const Search = (props) => {
   const changeHandler = (event) => {
     props.onSearch(event.target.value);
   };
+  const submitHandler = (event) => {
+    event.preventDefault();
+    props.onSearch(document.querySelector("#search").value);
+  };
 
   return (
     <div className="flex shadow-xl h-16 w-96 rounded-lg">
@@ -25,14 +29,14 @@ const Search = (props) => {
           </svg>
         </label>
       </div>
-      <div className="w-11/12">
+      <form className="w-11/12" onSubmit={submitHandler}>
         <input
           id="search"
           className="w-full px-6 h-full py-1 text-gray-800  focus:outline-none rounded-r-lg bg-white"
           placeholder="Search for a country..."
           onChange={changeHandler}
         />
-      </div>
+      </form>
     </div>
   );
 };
