@@ -4,7 +4,9 @@ const Footer = () => {
       {"</>"} Developed by
       <span>
         <a
-          href="#"
+          target="_blank"
+          rel="noreferrer"
+          href="https://twitter.com/Augustine_edeh"
           className="text-blue-600 dark:text-darkLink hover:underline"
         >
           Augustine
