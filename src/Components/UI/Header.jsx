@@ -73,7 +73,7 @@ function Header() {
   return (
     <header className="flex justify-between items-center shadow-md py-6 px-5 md:px-10 xl:px-40 2xl:px-72 text-lightText dark:text-darkText_LightElement bg-lightBg dark:bg-darkElement">
       <h1 className="font-bold text-lg">Where in the world?</h1>
-      <div className="flex gap-2" onClick={themeSwitchHandler}>
+      <div className="flex gap-2 cursor-pointer" onClick={themeSwitchHandler}>
         {/* <img src="vite.svg" alt="toggletheme" className="" /> */}
         <span
           // onClick={() => {
