@@ -11,6 +11,7 @@ export default {
         lightInput: "#858585",
         lightBg: "#fafafa",
         darkText_LightElement: "#ffffff",
+        darkLink: "#00FFFF",
       },
       width: {
         96: "30rem",

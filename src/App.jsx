@@ -4,6 +4,7 @@ import Search from "./Components/UI/Search";
 import Filter from "./Components/UI/Filter";
 import CountryCard from "./Components/UI/CountryCard";
 import Container from "./Components/UI/Container";
+import Footer from "./Components/UI/Footer";
 
 function App() {
   const [countries, setCountries] = useState();
@@ -51,7 +52,7 @@ function App() {
   }, []);
 
   return (
-    <section className="min-h-screen bg-lightBg dark:bg-darkBg">
+    <section className="min-h-screen bg-lightBg dark:bg-darkBg relative">
       <Header />
       <main className="p-5 md:p-10 xl:px-40 2xl:px-72">
         <Container
@@ -62,7 +63,7 @@ function App() {
         </Container>
 
         <Container
-          styleClasses={"flex flex-wrap justify-around gap-5 lg:gap-10"}
+          styleClasses={"flex flex-wrap justify-around gap-5 lg:gap-10 mb-40"}
         >
           {countries &&
             result.map((country) => (
@@ -73,6 +74,7 @@ function App() {
             ))}
         </Container>
       </main>
+      <Footer />
     </section>
   );
 }
