@@ -6,7 +6,7 @@ function Filter(props) {
     <select
       id="filter"
       onChange={changeHandler}
-      className="px-5 h-16 shadow-xl rounded-lg text-lightText dark:text-darkText_LightElement bg-lightBg dark:bg-darkElement"
+      className="px-5 h-16 shadow-xl rounded-lg text-lightText dark:text-darkText_LightElement bg-lightBg dark:bg-darkElement cursor-context-menu"
     >
       <option value="">Filter by Region</option>
       <option value="Africa">Africa</option>
