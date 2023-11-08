@@ -56,7 +56,7 @@ function App() {
       <Header />
       <main className="p-5 md:p-10 xl:px-40 2xl:px-72">
         <Container
-          styleClasses={"mt-5 mb-14 flex justify-between  flex-wrap gap-12"}
+          styleClasses={"mt-24 mb-20 flex justify-between  flex-wrap gap-12"}
         >
           <Search onSearch={searchHandler} />
           <Filter onFilter={filterHandler} />
