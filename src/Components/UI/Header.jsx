@@ -52,19 +52,6 @@ function Header() {
       />
     </svg>
   );
-  // const [darkMode, setDarkMode] = useState(false);
-
-  // darkMode ? console.log("Dark-Mode") : console.log("Light-Mode");
-
-  // if (
-  //   localStorage.theme === "dark" ||
-  //   (!("theme" in localStorage) &&
-  //     window.matchMedia("(prefers-color-scheme: dark)").matches)
-  // ) {
-  //   document.documentElement.classList.add("dark");
-  // } else {
-  //   document.documentElement.classList.remove("dark");
-  // }
 
   const themeSwitchHandler = () => {
     setTheme(theme === "dark" ? "light" : "dark");
@@ -74,17 +61,7 @@ function Header() {
     <header className="flex justify-between items-center shadow-md py-6 px-5 md:px-10 xl:px-40 2xl:px-72 text-lightText dark:text-darkText_LightElement bg-lightBg dark:bg-darkElement">
       <h1 className="font-bold text-lg">Where in the world?</h1>
       <div className="flex gap-2 cursor-pointer" onClick={themeSwitchHandler}>
-        {/* <img src="vite.svg" alt="toggletheme" className="" /> */}
-        <span
-          // onClick={() => {
-          //   setDarkMode((prev) => !prev);
-          //   darkMode
-          //     ? localStorage.setItem("theme", "dark")
-          //     : localStorage.setItem("theme", "light");
-          // }}
-
-          className="grid place-content-center"
-        >
+        <span className="grid place-content-center">
           <button type="button" className="grid place-content-center h-7 w-7">
             {theme === "dark" ? light : dark}
           </button>
