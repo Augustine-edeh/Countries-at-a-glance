@@ -66,12 +66,18 @@ function App() {
           styleClasses={"flex flex-wrap justify-around gap-5 lg:gap-10 mb-40"}
         >
           {countries &&
-            result.map((country) => (
-              <CountryCard
-                countryData={country}
-                key={Math.random().toString()}
-              />
-            ))}
+            result
+              .sort((a, b) =>
+                a.name.common
+                  .toUpperCase()
+                  .localeCompare(b.name.common.toUpperCase())
+              )
+              .map((country) => (
+                <CountryCard
+                  countryData={country}
+                  key={Math.random().toString()}
+                />
+              ))}
         </Container>
       </main>
       <Footer />
