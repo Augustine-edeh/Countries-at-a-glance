@@ -19,7 +19,7 @@ function Header() {
     }
   }, [theme]);
 
-  const light = (
+  const sunIcon = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
@@ -36,7 +36,7 @@ function Header() {
     </svg>
   );
 
-  const dark = (
+  const moonIcon = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
@@ -65,7 +65,7 @@ function Header() {
       <div className="flex gap-2 cursor-pointer" onClick={themeSwitchHandler}>
         <span className="grid place-content-center">
           <button type="button" className="grid place-content-center h-7 w-7">
-            {theme === "dark" ? light : dark}
+            {theme === "dark" ? sunIcon : moonIcon}
           </button>
         </span>
         <p className="grid place-content-center ">
