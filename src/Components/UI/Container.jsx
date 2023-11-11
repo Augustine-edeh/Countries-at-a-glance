@@ -1,5 +1,5 @@
-function Container({ styleClasses, children }) {
+const Container = ({ styleClasses, children }) => {
   return <section className={styleClasses}>{children}</section>;
-}
+};
 
 export default Container;

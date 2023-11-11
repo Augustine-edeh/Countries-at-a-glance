@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function Header() {
+const Header = () => {
   const [theme, setTheme] = useState(null);
 
   useEffect(() => {
@@ -74,6 +74,6 @@ function Header() {
       </div>
     </header>
   );
-}
+};
 
 export default Header;

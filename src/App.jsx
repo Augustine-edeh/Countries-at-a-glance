@@ -9,7 +9,7 @@ import ErrorPage from "./Components/UI/FetchError";
 import LoadingUI from "./Components/UI/LoadingUI";
 import CountryNotFoundUI from "./Components/UI/CountryNotFoundUI";
 
-function App() {
+const App = () => {
   const [countries, setCountries] = useState([]);
   const [result, setResult] = useState();
   const [isFetchError, setIsFetchError] = useState(false);
@@ -99,6 +99,6 @@ function App() {
       <Footer />
     </section>
   );
-}
+};
 
 export default App;

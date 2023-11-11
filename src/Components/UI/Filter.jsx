@@ -1,4 +1,4 @@
-function Filter(props) {
+const Filter = (props) => {
   const changeHandler = (event) => {
     props.onFilter(event.target.value);
   };
@@ -16,6 +16,6 @@ function Filter(props) {
       <option value="Oceania">Oceania</option>
     </select>
   );
-}
+};
 
 export default Filter;

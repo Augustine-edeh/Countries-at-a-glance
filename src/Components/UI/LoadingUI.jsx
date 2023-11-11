@@ -1,4 +1,4 @@
-function LoadingUI() {
+const LoadingUI = () => {
   return (
     <div className="my-14 md:my-20 xl:my-24 text-lightText dark:text-darkText_LightElement bg-darkText_LightElement dark:bg-darkElement shadow-lg px-5 py-3 rounded-xl">
       <p className="text-lightText dark:text-darkText_LightElement md:text-xl 2xl:text-2xl dark:border-gray-600 px-5">
@@ -19,6 +19,6 @@ function LoadingUI() {
       </p>
     </div>
   );
-}
+};
 
 export default LoadingUI;
