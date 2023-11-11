@@ -1,10 +1,10 @@
-const Search = (props) => {
+const Search = ({ onSearch }) => {
   const changeHandler = (event) => {
-    props.onSearch(event.target.value);
+    onSearch(event.target.value);
   };
   const submitHandler = (event) => {
     event.preventDefault();
-    props.onSearch(document.querySelector("#search").value);
+    onSearch(document.querySelector("#search").value);
   };
 
   return (

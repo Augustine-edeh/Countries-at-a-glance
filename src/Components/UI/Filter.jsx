@@ -1,6 +1,6 @@
-const Filter = (props) => {
+const Filter = ({ onFilter }) => {
   const changeHandler = (event) => {
-    props.onFilter(event.target.value);
+    onFilter(event.target.value);
   };
   return (
     <select
