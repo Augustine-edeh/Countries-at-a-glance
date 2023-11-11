@@ -46,7 +46,6 @@ const App = () => {
         }
       })
       .then((data) => {
-        // console.log(data);
         alert(underConstructionNote);
         setCountries(data);
         setResult(data);
