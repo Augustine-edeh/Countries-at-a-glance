@@ -37,7 +37,7 @@ const App = () => {
     " 🚧 Project Under Construction 🚧\n\nThanks for stopping by! This project is currently under development and we're crafting an amazing responsive experience for the best adventure, just for you.\n \n-Country-Pedia Team 🚀📱 ";
 
   useEffect(() => {
-    fetch("https://restcountries.com/v8.1/all")
+    fetch("https://restcountries.com/v3.1/all")
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -74,7 +74,7 @@ const App = () => {
         >
           {countries.length > 0 ? (
             isFetchError ? (
-              <p>Error: {errorMessage}</p>
+              <ErrorPage errorMessage={errorMessage} />
             ) : result.length > 0 ? (
               result
                 .sort((a, b) =>
@@ -92,7 +92,13 @@ const App = () => {
               <CountryNotFoundUI />
             )
           ) : (
-            <>{isFetchError ? <ErrorPage /> : <LoadingUI />}</>
+            <>
+              {isFetchError ? (
+                <ErrorPage errorMessage={errorMessage} />
+              ) : (
+                <LoadingUI />
+              )}
+            </>
           )}
         </Container>
       </main>
