@@ -1,26 +1,22 @@
 import BackButton from "./BackButton";
 const Country = () => {
-  const borders = ["France", "Germany", " Netherlands"];
+  const borders = ["France", "Germany", "Luxembourg", "Netherlands"];
   const languages = ["Dutch", "French", "German"];
   return (
     <main className="text-lightText dark:text-darkText_LightElement">
       <BackButton />
-      <div className="flex flex-col gap-10 md:flex-row bg-gray-200">
-        <section className="bg-red-300 h-80 md:h-auto md:w-1/2 p-2">
-          <img
-            src="https://flagcdn.com/be.svg"
-            alt="flag"
-            className="h-full w-full"
-          />
+      <div className="flex flex-col gap-10 lg:flex-row bg-gray-200">
+        <section className=" bg-red-300  lg:w-1/2 p-2 container">
+          <img src="https://flagcdn.com/be.svg" alt="flag" className="" />
         </section>
 
-        <section className="flex flex-col md:w-1/2 bg-red-800">
+        <section className="flex flex-col lg:w-1/2 bg-red-800">
           <div className="bg-blue-300 mb-10 p-1">
             <p className="font-bold text-3xl bg-red-500">Belgium</p>
           </div>
 
           <div className="flex flex-col gap-10">
-            <div className="flex flex-col gap-10 md:flex-row bg-pink-400 justify-between text-lg">
+            <div className="flex flex-col gap-10 md:flex-row bg-pink-400 text-lg">
               <div className="bg-indigo-400">
                 <p>
                   Native Name: <span>Belgie</span>
