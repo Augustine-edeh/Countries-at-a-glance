@@ -1,10 +1,13 @@
+import { Link } from "react-router-dom";
 import BackButton from "./BackButton";
 const Country = () => {
   const borders = ["France", "Germany", "Luxembourg", "Netherlands"];
   const languages = ["Dutch", "French", "German"];
   return (
     <main className="text-lightText dark:text-darkText_LightElement">
-      <BackButton />
+      <Link to="/">
+        <BackButton />
+      </Link>
       <div className="flex flex-col gap-10 lg:gap-20 2xl:gap-40 lg:flex-row  container lg:h-96 mt-10">
         <section className="lg:w-1/2 container">
           <img
