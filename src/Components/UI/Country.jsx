@@ -5,8 +5,8 @@ const Country = () => {
   return (
     <main className="text-lightText dark:text-darkText_LightElement">
       <BackButton />
-      <div className="flex flex-col gap-10 lg:flex-row bg-gray-200 container lg:h-96">
-        <section className=" bg-red-300  lg:w-1/2 p-2 container">
+      <div className="flex flex-col gap-10 lg:gap-20 2xl:gap-40 lg:flex-row  container lg:h-96 mt-10">
+        <section className="lg:w-1/2 container">
           <img
             src="https://flagcdn.com/be.svg"
             alt="flag"
@@ -14,48 +14,49 @@ const Country = () => {
           />
         </section>
 
-        <section className="flex flex-col lg:w-1/2 bg-red-800">
-          <div className="bg-blue-300 mb-10 p-1">
-            <p className="font-bold text-3xl bg-red-500">Belgium</p>
+        <section className="flex flex-col lg:w-1/2 ">
+          <div className="mb-10">
+            <p className="font-bold text-3xl">Belgium</p>
           </div>
 
-          <div className="flex flex-col gap-10 bg-indigo-300 h-full justify-around">
-            <div className="flex flex-col gap-10 md:flex-row bg-pink-400 text-lg">
-              <div className="bg-indigo-400">
+          <div className="flex flex-col gap-10  h-full justify-around">
+            <div className="flex flex-col gap-10 md:flex-row  text-lg">
+              <div className="">
                 <p>
-                  Native Name: <span>Belgie</span>
+                  Native Name: <span className="font-thin">Belgie</span>
                 </p>
                 <p>
-                  Population: <span>11,319,511</span>
+                  Population: <span className="font-thin">11,319,511</span>
                 </p>
                 <p>
-                  Region: <span>Europe</span>
+                  Region: <span className="font-thin">Europe</span>
                 </p>
                 <p>
-                  Sub Region: <span>Western Europe</span>
+                  Sub Region: <span className="font-thin">Western Europe</span>
                 </p>
                 <p>
-                  Capital: <span>Brussels</span>
+                  Capital: <span className="font-thin">Brussels</span>
                 </p>
               </div>
 
-              <div className="bg-green-300">
+              <div className="">
                 <p>
-                  Top Level Domain: <span>.be</span>
+                  Top Level Domain: <span className="font-thin">.be</span>
                 </p>
                 <p>
-                  Currencies: <span>Euro</span>
+                  Currencies: <span className="font-thin">Euro</span>
                 </p>
                 <p>
-                  Languages: <span>{languages.join(", ")}</span>
+                  Languages:{" "}
+                  <span className="font-thin">{languages.join(", ")}</span>
                 </p>
               </div>
             </div>
 
-            <div className="bg-orange-300">
-              <p className="flex flex-col lg:flex-row  gap-1">
-                <span className="bg-red-100">Border Countries:</span>
-                <span className="flex flex-wrap gap-3 bg-red-200">
+            <div className="">
+              <p className="flex flex-col lg:flex-row gap-1">
+                <span className="">Border Countries:</span>
+                <span className="flex flex-wrap gap-3 ">
                   {borders.map((borderCountry) => (
                     <button
                       key={Math.random().toString()}

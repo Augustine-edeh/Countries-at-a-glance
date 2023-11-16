@@ -62,7 +62,7 @@ const App = () => {
     <section className="min-h-screen bg-lightBg dark:bg-darkBg relative">
       <Header />
       <main className="p-5 md:p-10 xl:px-40 2xl:px-72">
-        <Container styleClasses={"my-24 mb-20 "}>
+        <Container styleClasses={"my-24 "}>
           <Country />
         </Container>
       </main>
