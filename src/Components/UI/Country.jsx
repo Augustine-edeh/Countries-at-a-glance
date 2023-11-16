@@ -5,9 +5,13 @@ const Country = () => {
   return (
     <main className="text-lightText dark:text-darkText_LightElement">
       <BackButton />
-      <div className="flex flex-col gap-10 lg:flex-row bg-gray-200">
+      <div className="flex flex-col gap-10 lg:flex-row bg-gray-200 container lg:h-96">
         <section className=" bg-red-300  lg:w-1/2 p-2 container">
-          <img src="https://flagcdn.com/be.svg" alt="flag" className="" />
+          <img
+            src="https://flagcdn.com/be.svg"
+            alt="flag"
+            className="h-full w-full"
+          />
         </section>
 
         <section className="flex flex-col lg:w-1/2 bg-red-800">
@@ -15,7 +19,7 @@ const Country = () => {
             <p className="font-bold text-3xl bg-red-500">Belgium</p>
           </div>
 
-          <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-10 bg-indigo-300 h-full justify-around">
             <div className="flex flex-col gap-10 md:flex-row bg-pink-400 text-lg">
               <div className="bg-indigo-400">
                 <p>
@@ -49,9 +53,9 @@ const Country = () => {
             </div>
 
             <div className="bg-orange-300">
-              <p className="flex flex-wrap items-center gap-1">
-                Border Countries:
-                <span className="flex flex-wrap gap-3 ">
+              <p className="flex flex-col lg:flex-row  gap-1">
+                <span className="bg-red-100">Border Countries:</span>
+                <span className="flex flex-wrap gap-3 bg-red-200">
                   {borders.map((borderCountry) => (
                     <button
                       key={Math.random().toString()}
