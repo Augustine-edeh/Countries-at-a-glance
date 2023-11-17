@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import BackButton from "./BackButton";
 import Container from "./Container";
 const Country = () => {
@@ -7,7 +8,9 @@ const Country = () => {
     <main className="p-5 md:p-10 xl:px-40 2xl:px-72">
       <Container styleClasses={"my-24 "}>
         <div className="text-lightText dark:text-darkText_LightElement">
-          <BackButton />
+          <Link to="/">
+            <BackButton />
+          </Link>
           <div className="flex flex-col gap-10 lg:gap-20 2xl:gap-40 lg:flex-row  container lg:h-96 mt-10">
             <section className="lg:w-1/2 container">
               <img
