@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 const BackButton = () => {
+  const navigate = useNavigate();
   const leftArrow = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -20,6 +23,7 @@ const BackButton = () => {
     <button
       type="button"
       className="flex gap-2 text-lightText dark:text-darkText_LightElement bg-darkText_LightElement dark:bg-darkElement py-2 px-5  rounded-md shadow-xl"
+      onClick={() => navigate("/")}
     >
       {leftArrow}
       <span className="">Back</span>
