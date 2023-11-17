@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Search from "./Search";
 import Filter from "./Filter";
-import CountryCard from "./CountryCard";
+import Card from "./Card";
 import Container from "./Container";
 import ErrorPage from "./FetchError";
 import LoadingUI from "./LoadingUI";
@@ -77,10 +77,7 @@ const Home = () => {
                   .localeCompare(b.name.common.toUpperCase())
               )
               .map((country) => (
-                <CountryCard
-                  countryData={country}
-                  key={Math.random().toString()}
-                />
+                <Card countryData={country} key={Math.random().toString()} />
               ))
           ) : (
             <CountryNotFoundUI />

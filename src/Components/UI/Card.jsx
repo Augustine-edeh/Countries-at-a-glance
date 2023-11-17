@@ -1,4 +1,4 @@
-const CountryCard = ({ countryData }) => {
+const Card = ({ countryData }) => {
   return (
     <div className="flex  flex-col shadow-lg h-15 rounded-lg overflow-hidden w-64 mb-10 transition-all duration-300 hover:scale-110 text-lightText dark:text-darkText_LightElement bg-lightBg dark:bg-darkElement ">
       <section className="h-40">
@@ -22,4 +22,4 @@ const CountryCard = ({ countryData }) => {
   );
 };
 
-export default CountryCard;
+export default Card;
