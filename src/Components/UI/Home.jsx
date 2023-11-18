@@ -43,7 +43,7 @@ const Home = () => {
         }
       })
       .then((data) => {
-        alert(underConstructionNote);
+        // alert(underConstructionNote);
         setCountries(data);
         setResult(data);
       })

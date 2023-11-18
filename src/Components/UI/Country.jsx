@@ -1,6 +1,30 @@
+import { useState } from "react";
 import BackButton from "./BackButton";
 import Container from "./Container";
 const Country = () => {
+  // const [selectedCountry, setSelectedCountry] = useState({
+  //   name: "Augustine",
+  // });
+  // setSelectedCountry(JSON.parse(localStorage.getItem("countryData")));
+  // console.log(localStorage.getItem("selectedCountry"));
+  let selectedCountry = localStorage.getItem("selectedCountry");
+
+  // chatGPT
+
+  // Assuming the JSON data is stored in the local storage under the key "countryData"
+  // const jsonString = localStorage.getItem("countryData");
+
+  // // Parse the JSON string into a JavaScript object
+  // const countryData = JSON.parse(jsonString);
+
+  // // Access the common name and assign it to the variable CountryName
+  // const CountryName = countryData.name.common;
+
+  const countryInfo = JSON.parse(localStorage.getItem("countryData"));
+
+  // Log the result
+  // console.log('Common Name:', CountryName);
+
   const borders = ["France", "Germany", "Luxembourg", "Netherlands"];
   const languages = ["Dutch", "French", "German"];
   return (
@@ -11,7 +35,7 @@ const Country = () => {
           <div className="flex flex-col gap-10 lg:gap-20 2xl:gap-40 lg:flex-row  container lg:h-96 mt-10">
             <section className="lg:w-1/2 container">
               <img
-                src="https://flagcdn.com/be.svg"
+                src={countryInfo.flags.png}
                 alt="flag"
                 className="h-full w-full"
               />
@@ -19,33 +43,39 @@ const Country = () => {
 
             <section className="flex flex-col lg:w-1/2 ">
               <div className="mb-10">
-                <p className="font-bold text-3xl">Belgium</p>
+                <p className="font-bold text-3xl">{countryInfo.name.common}</p>
               </div>
 
               <div className="flex flex-col gap-10  h-full justify-around">
                 <div className="flex flex-col gap-10 md:flex-row  text-lg">
-                  <div className="">
+                  <div className="w-full">
                     <p>
                       Native Name: <span className="font-thin">Belgie</span>
                     </p>
                     <p>
-                      Population: <span className="font-thin">11,319,511</span>
+                      Population:{" "}
+                      <span className="font-thin">
+                        {countryInfo.population}
+                      </span>
                     </p>
                     <p>
-                      Region: <span className="font-thin">Europe</span>
+                      Region:{" "}
+                      <span className="font-thin">{countryInfo.region}</span>
                     </p>
                     <p>
                       Sub Region:{" "}
-                      <span className="font-thin">Western Europe</span>
+                      <span className="font-thin">{countryInfo.subregion}</span>
                     </p>
                     <p>
-                      Capital: <span className="font-thin">Brussels</span>
+                      Capital:{" "}
+                      <span className="font-thin">{countryInfo.capital}</span>
                     </p>
                   </div>
 
                   <div className="">
                     <p>
-                      Top Level Domain: <span className="font-thin">.be</span>
+                      Top Level Domain:{" "}
+                      <span className="font-thin">{countryInfo.tld}</span>
                     </p>
                     <p>
                       Currencies: <span className="font-thin">Euro</span>
