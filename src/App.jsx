@@ -1,4 +1,3 @@
-// import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./Components/UI/Header";
 import Home from "./Components/UI/Home";

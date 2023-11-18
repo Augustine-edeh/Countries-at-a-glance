@@ -1,30 +1,7 @@
-import { useState } from "react";
 import BackButton from "./BackButton";
 import Container from "./Container";
 const Country = () => {
-  // const [selectedCountry, setSelectedCountry] = useState({
-  //   name: "Augustine",
-  // });
-  // setSelectedCountry(JSON.parse(localStorage.getItem("countryData")));
-  // console.log(localStorage.getItem("selectedCountry"));
-  let selectedCountry = localStorage.getItem("selectedCountry");
-
-  // chatGPT
-
-  // Assuming the JSON data is stored in the local storage under the key "countryData"
-  // const jsonString = localStorage.getItem("countryData");
-
-  // // Parse the JSON string into a JavaScript object
-  // const countryData = JSON.parse(jsonString);
-
-  // // Access the common name and assign it to the variable CountryName
-  // const CountryName = countryData.name.common;
-
   const countryInfo = JSON.parse(localStorage.getItem("countryData"));
-
-  // Log the result
-  // console.log('Common Name:', CountryName);
-
   const borders = ["France", "Germany", "Luxembourg", "Netherlands"];
   const languages = ["Dutch", "French", "German"];
   return (
