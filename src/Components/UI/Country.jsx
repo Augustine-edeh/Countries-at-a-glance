@@ -20,14 +20,19 @@ const Country = () => {
 
             <section className="flex flex-col lg:w-1/2 ">
               <div className="mb-10">
-                <p className="font-bold text-3xl">{countryInfo.name.common}</p>
+                <p className="font-bold text-3xl">
+                  {countryInfo.name.official}
+                </p>
               </div>
 
               <div className="flex flex-col gap-10  h-full justify-around">
-                <div className="flex flex-col gap-10 md:flex-row  text-lg">
-                  <div className="w-full">
+                <div className="flex flex-col gap-10 md:gap-12 lg:gap-14 2xl:gap-20 md:flex-row  text-lg">
+                  <div className="w-fit">
                     <p>
-                      Native Name: <span className="font-thin">Belgie</span>
+                      Native Name:{" "}
+                      <span className="font-thin">
+                        {countryInfo.name.common}
+                      </span>
                     </p>
                     <p>
                       Population:{" "}
