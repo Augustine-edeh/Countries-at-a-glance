@@ -74,7 +74,7 @@ const Country = () => {
                   <p className="flex flex-col lg:flex-row gap-1">
                     <span className="">Border Countries:</span>
                     <span className="flex flex-wrap gap-3 ">
-                      {borders.map((borderCountry) => (
+                      {countryInfo.borders.map((borderCountry) => (
                         <button
                           key={Math.random().toString()}
                           type="button"
