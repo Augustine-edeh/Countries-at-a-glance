@@ -22,7 +22,7 @@ const Card = ({ countryData }) => {
       </section>
       <section className="px-5  pb-10">
         {/* <p className="font-bold mt-8 mb-5">{countryData.name.common}</p> */}
-        <p className="font-bold mt-8 mb-5">{countryData.name.common}</p>
+        <p className="font-bold mt-8 mb-5">{countryData.name.official}</p>
         <p>
           <span className="font-semibold">Population: </span>
           {countryData.population}
