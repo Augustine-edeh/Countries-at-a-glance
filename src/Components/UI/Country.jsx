@@ -3,7 +3,9 @@ import Container from "./Container";
 const Country = () => {
   const countryInfo = JSON.parse(localStorage.getItem("countryData"));
   const borders = ["France", "Germany", "Luxembourg", "Netherlands"];
-  const languages = ["Dutch", "French", "German"];
+  const languages = Object.keys(countryInfo.languages)
+    .map((key) => countryInfo.languages[key])
+    .join(", ");
   return (
     <main className="p-5 md:p-10 xl:px-40 2xl:px-72">
       <Container styleClasses={"my-24 "}>
@@ -63,8 +65,7 @@ const Country = () => {
                       Currencies: <span className="font-thin">Euro</span>
                     </p>
                     <p>
-                      Languages:{" "}
-                      <span className="font-thin">{languages.join(", ")}</span>
+                      Languages: <span className="font-thin">{languages}</span>
                     </p>
                   </div>
                 </div>
