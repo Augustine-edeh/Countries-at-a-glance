@@ -2,7 +2,7 @@ import BackButton from "./BackButton";
 import Container from "./Container";
 const Country = () => {
   const countryInfo = JSON.parse(localStorage.getItem("countryData"));
-  const borders = ["France", "Germany", "Luxembourg", "Netherlands"];
+  const borders = countryInfo.borders;
   const languages = Object.keys(countryInfo.languages)
     .map((key) => countryInfo.languages[key])
     .join(", ");
@@ -74,15 +74,16 @@ const Country = () => {
                   <p className="flex flex-col lg:flex-row gap-1">
                     <span className="">Border Countries:</span>
                     <span className="flex flex-wrap gap-3 ">
-                      {countryInfo.borders.map((borderCountry) => (
-                        <button
-                          key={Math.random().toString()}
-                          type="button"
-                          className="text-lightText dark:text-darkText_LightElement bg-darkText_LightElement dark:bg-darkElement py-0.5 px-5 rounded-sm shadow-lg"
-                        >
-                          {borderCountry}
-                        </button>
-                      ))}
+                      {borders &&
+                        borders.map((borderCountry) => (
+                          <button
+                            key={Math.random().toString()}
+                            type="button"
+                            className="text-lightText dark:text-darkText_LightElement bg-darkText_LightElement dark:bg-darkElement py-0.5 px-5 rounded-sm shadow-lg"
+                          >
+                            {borderCountry}
+                          </button>
+                        ))}
                     </span>
                   </p>
                 </div>
