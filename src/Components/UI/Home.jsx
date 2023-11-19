@@ -31,7 +31,7 @@ const Home = () => {
   };
 
   const underConstructionNote =
-    " 🚧 Project Under Construction 🚧\n\nThanks for stopping by! This project is currently under development and we're crafting an amazing responsive experience for the best adventure, just for you.\n \n-Country-Pedia Team 🚀📱 ";
+    " 🚧 Project Under Construction 🚧\n\nThanks for stopping by! This project is currently under development and we're crafting an amazing responsive experience for the best adventure, just for you.\n \n-Augustine 🚀📱 ";
 
   useEffect(() => {
     fetch("https://restcountries.com/v3.1/all")
@@ -43,7 +43,7 @@ const Home = () => {
         }
       })
       .then((data) => {
-        // alert(underConstructionNote);
+        alert(underConstructionNote);
         setCountries(data);
         setResult(data);
       })
