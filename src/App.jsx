@@ -9,7 +9,7 @@ const App = () => {
     <section className="min-h-screen bg-lightBg dark:bg-darkBg relative">
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route index element={<Home />} />
         <Route path="/:countryName" element={<Country />} />
       </Routes>
 
