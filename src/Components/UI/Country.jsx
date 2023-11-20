@@ -88,6 +88,7 @@ const Country = () => {
                       ) : (
                         <button
                           type="button"
+                          title={`${countryInfo.name.common} has no border`}
                           className="text-lightText dark:text-darkText_LightElement bg-darkText_LightElement dark:bg-darkElement py-0.5 px-5 rounded-sm shadow-lg"
                         >
                           No Border
