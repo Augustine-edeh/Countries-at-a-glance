@@ -14,10 +14,14 @@ const Home = () => {
 
   const searchHandler = (searchValue) => {
     setResult(
-      countries.filter((country) =>
-        country.name.official
-          .toLowerCase()
-          .includes(searchValue.trim().toLowerCase())
+      countries.filter(
+        (country) =>
+          country.name.official
+            .toLowerCase()
+            .includes(searchValue.trim().toLowerCase()) ||
+          country.name.common
+            .toLowerCase()
+            .includes(searchValue.trim().toLowerCase())
       )
     );
   };
