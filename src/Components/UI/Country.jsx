@@ -1,6 +1,6 @@
 import BackButton from "./BackButton";
 import Container from "./Container";
-import CountriesCodeName from "./countriesName";
+import getBorderName from "./countriesName";
 
 const Country = () => {
   const countryInfo = JSON.parse(localStorage.getItem("countryData"));
@@ -86,7 +86,9 @@ const Country = () => {
                               type="button"
                               className="text-lightText dark:text-darkText_LightElement bg-darkText_LightElement dark:bg-darkElement py-0.5 px-5 rounded-sm shadow-lg"
                             >
-                              {CountriesCodeName[0].data[borderCountry].country}
+                              {/* {CountriesCodeName[0].data[borderCountry].country} */}
+
+                              {getBorderName(borderCountry)}
                             </button>
                           );
                         })
