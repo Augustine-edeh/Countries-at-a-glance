@@ -5,7 +5,6 @@ import getBorderName from "./countriesName";
 const Country = () => {
   const countryInfo = JSON.parse(localStorage.getItem("countryData"));
   const borders = countryInfo.borders;
-  console.log(borders);
   const languages = Object.keys(countryInfo.languages)
     .map((key) => countryInfo.languages[key])
     .join(", ");
