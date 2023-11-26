@@ -86,19 +86,6 @@ const Country = () => {
                               type="button"
                               className="text-lightText dark:text-darkText_LightElement bg-darkText_LightElement dark:bg-darkElement py-0.5 px-5 rounded-sm shadow-lg"
                             >
-                              {/* {console.log(
-                                Object.keys(CountriesCodeName[0].data).map(
-                                  (key) =>
-                                    borderCountry === key
-                                      ? CountriesCodeName[0].data[key].country
-                                      : null
-                                )
-                              )} */}
-                              {/* {console.log(
-                                CountriesCodeName[0].data[borderCountry].country
-                              )} */}
-
-                              {/* {borderCountry} */}
                               {CountriesCodeName[0].data[borderCountry].country}
                             </button>
                           );
