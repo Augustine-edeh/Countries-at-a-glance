@@ -75,7 +75,7 @@ const Country = () => {
                 </div>
 
                 <div className="">
-                  <p className="flex flex-col lg:flex-row gap-1">
+                  <p className="flex flex-col lg:flex-row gap-3">
                     <span className="">Border Countries:</span>
                     <span className="flex flex-wrap gap-3 ">
                       {borders?.length ? (
