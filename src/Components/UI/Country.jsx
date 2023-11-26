@@ -1,5 +1,7 @@
 import BackButton from "./BackButton";
 import Container from "./Container";
+import CountriesCodeName from "./countriesName";
+
 const Country = () => {
   const countryInfo = JSON.parse(localStorage.getItem("countryData"));
   const borders = countryInfo.borders;
@@ -7,6 +9,7 @@ const Country = () => {
   const languages = Object.keys(countryInfo.languages)
     .map((key) => countryInfo.languages[key])
     .join(", ");
+
   return (
     <main className="p-5 md:p-10 xl:px-40 2xl:px-72">
       <Container styleClasses={"my-24 "}>
@@ -76,15 +79,30 @@ const Country = () => {
                     <span className="">Border Countries:</span>
                     <span className="flex flex-wrap gap-3 ">
                       {borders?.length ? (
-                        borders.map((borderCountry) => (
-                          <button
-                            key={Math.random().toString()}
-                            type="button"
-                            className="text-lightText dark:text-darkText_LightElement bg-darkText_LightElement dark:bg-darkElement py-0.5 px-5 rounded-sm shadow-lg"
-                          >
-                            {borderCountry}
-                          </button>
-                        ))
+                        borders.map((borderCountry) => {
+                          return (
+                            <button
+                              key={Math.random().toString()}
+                              type="button"
+                              className="text-lightText dark:text-darkText_LightElement bg-darkText_LightElement dark:bg-darkElement py-0.5 px-5 rounded-sm shadow-lg"
+                            >
+                              {/* {console.log(
+                                Object.keys(CountriesCodeName[0].data).map(
+                                  (key) =>
+                                    borderCountry === key
+                                      ? CountriesCodeName[0].data[key].country
+                                      : null
+                                )
+                              )} */}
+                              {/* {console.log(
+                                CountriesCodeName[0].data[borderCountry].country
+                              )} */}
+
+                              {/* {borderCountry} */}
+                              {CountriesCodeName[0].data[borderCountry].country}
+                            </button>
+                          );
+                        })
                       ) : (
                         <button
                           type="button"
