@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import Search from "./Search";
-import Filter from "./Filter";
-import Card from "./Card";
-import Container from "./Container";
-import ErrorPage from "./FetchError";
-import LoadingUI from "./LoadingUI";
-import CountryNotFoundUI from "./CountryNotFoundUI";
+import Search from "../UI/Search";
+import Filter from "../UI/Filter";
+import Card from "../UI/Card";
+import Container from "../UI/Container";
+import ErrorPage from "../Errors UI/FetchError";
+import LoadingUI from "../UI/LoadingUI";
+import CountryNotFoundUI from "../Errors UI/CountryNotFoundUI";
 const Home = () => {
   const [countries, setCountries] = useState([]);
   const [result, setResult] = useState();
