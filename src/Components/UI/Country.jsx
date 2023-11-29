@@ -54,6 +54,9 @@ const Country = () => {
                       <span className="font-thin">{countryInfo.subregion}</span>
                     </p>
                     <p>
+                      Time <span>{countryInfo.time}</span>
+                    </p>
+                    <p>
                       Capital:{" "}
                       <span className="font-thin">{countryInfo.capital}</span>
                     </p>
