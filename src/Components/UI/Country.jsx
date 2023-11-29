@@ -61,6 +61,12 @@ const Country = () => {
 
                   <div className="">
                     <p>
+                      Time <span>{countryInfo.time}</span>
+                    </p>
+                    <p>
+                      Date <span>{countryInfo.date}</span>
+                    </p>
+                    <p>
                       Top Level Domain:{" "}
                       <span className="font-thin">{countryInfo.tld}</span>
                     </p>
