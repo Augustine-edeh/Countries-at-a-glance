@@ -59,7 +59,7 @@ const Country = () => {
                     </p>
                   </div>
 
-                  <div className="">
+                  <div>
                     <p>
                       Time <span>{countryInfo.time}</span>
                     </p>
