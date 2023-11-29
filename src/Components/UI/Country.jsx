@@ -54,18 +54,18 @@ const Country = () => {
                       <span className="font-thin">{countryInfo.subregion}</span>
                     </p>
                     <p>
-                      Time <span>{countryInfo.time}</span>
-                    </p>
-                    <p>
-                      Date <span>{countryInfo.date}</span>
-                    </p>
-                    <p>
                       Capital:{" "}
                       <span className="font-thin">{countryInfo.capital}</span>
                     </p>
                   </div>
 
                   <div className="">
+                    <p>
+                      Time <span>{countryInfo.time}</span>
+                    </p>
+                    <p>
+                      Date <span>{countryInfo.date}</span>
+                    </p>
                     <p>
                       Top Level Domain:{" "}
                       <span className="font-thin">{countryInfo.tld}</span>
