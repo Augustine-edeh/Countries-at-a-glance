@@ -3,9 +3,9 @@ import Search from "../UI/Search";
 import Filter from "../UI/Filter";
 import Card from "../UI/Card";
 import Container from "../UI/Container";
-import ErrorPage from "../Errors UI/FetchError";
+import ErrorPage from "../UI/Errors UI/FetchError";
 import LoadingUI from "../UI/LoadingUI";
-import CountryNotFoundUI from "../Errors UI/CountryNotFoundUI";
+import CountryNotFoundUI from "../UI/Errors UI/CountryNotFoundUI";
 const Home = () => {
   const [countries, setCountries] = useState([]);
   const [result, setResult] = useState();

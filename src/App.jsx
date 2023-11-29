@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/UI/Header";
-import Home from "./components/Pages/Home";
+import Home from "./components/pages/Home";
 import Footer from "./components/UI/Footer";
-import CountryDetail from "./components/Pages/CountryDetail";
+import CountryDetail from "./components/pages/CountryDetail";
 
 const App = () => {
   useEffect(() => {
