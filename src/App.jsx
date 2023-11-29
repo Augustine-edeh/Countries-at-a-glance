@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import Header from "./Components/UI/Header";
-import Home from "./Components/UI/Home";
-import Footer from "./Components/UI/Footer";
-import Country from "./Components/UI/Country";
+import Header from "./components/UI/Header";
+import Home from "./components/pages/Home";
+import Footer from "./components/UI/Footer";
+import CountryDetail from "./components/pages/CountryDetail";
 
 const App = () => {
   useEffect(() => {
@@ -16,7 +16,7 @@ const App = () => {
       <Header />
       <Routes>
         <Route index element={<Home />} />
-        <Route path="/:countryName" element={<Country />} />
+        <Route path="/:countryName" element={<CountryDetail />} />
       </Routes>
 
       <Footer />

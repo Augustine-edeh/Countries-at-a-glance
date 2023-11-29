@@ -1,6 +1,6 @@
-import BackButton from "./BackButton";
-import Container from "./Container";
-import getBorderName from "./countriesName";
+import BackButton from "../UI/BackButton";
+import Container from "../UI/Container";
+import getBorderName from "../../utils/helper";
 
 const Country = () => {
   const countryInfo = JSON.parse(localStorage.getItem("countryData"));
@@ -59,7 +59,7 @@ const Country = () => {
                     </p>
                   </div>
 
-                  <div className="">
+                  <div>
                     <p>
                       Time <span>{countryInfo.time}</span>
                     </p>
