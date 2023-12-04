@@ -8,6 +8,7 @@ const Country = () => {
   const languages = Object.keys(countryInfo.languages)
     .map((key) => countryInfo.languages[key])
     .join(", ");
+  console.log(countryInfo);
 
   return (
     <main className="p-5 md:p-10 xl:px-40 2xl:px-72">
@@ -56,6 +57,18 @@ const Country = () => {
                     <p>
                       Capital:{" "}
                       <span className="font-thin">{countryInfo.capital}</span>
+                    </p>
+                    <p>
+                      <span>
+                        <a
+                          target="_blank"
+                          rel="noreferrer"
+                          href={countryInfo.maps.googleMaps}
+                          className="text-blue-600 dark:text-darkLink hover:underline"
+                        >
+                          Map of {countryInfo.name.common}
+                        </a>
+                      </span>
                     </p>
                   </div>
 
