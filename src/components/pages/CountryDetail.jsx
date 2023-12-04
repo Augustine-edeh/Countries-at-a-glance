@@ -61,10 +61,10 @@ const Country = () => {
 
                   <div>
                     <p>
-                      Time <span>{countryInfo.time}</span>
+                      Time: <span>{countryInfo.time}</span>
                     </p>
                     <p>
-                      Date <span>{countryInfo.date}</span>
+                      Date: <span>{countryInfo.date}</span>
                     </p>
                     <p>
                       Top Level Domain:{" "}
