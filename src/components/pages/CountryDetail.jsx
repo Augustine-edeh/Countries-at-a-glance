@@ -8,7 +8,6 @@ const Country = () => {
   const languages = Object.keys(countryInfo.languages)
     .map((key) => countryInfo.languages[key])
     .join(", ");
-  // console.log(countryInfo);
 
   return (
     <main className="p-5 md:p-10 xl:px-40 2xl:px-72">
