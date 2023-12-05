@@ -40,16 +40,13 @@ const Card = ({ countryData }) => {
           const time12hr = `${hours12}:${minutes} ${period}`;
 
           countryData.time = time12hr;
-          console.log(countryData.time);
         }
         convertTo12HourFormat(time24hr);
         // countryData.date = data.formatted.split(" ")[0].replace(/-/g, "/");
         const dateData = data.formatted.split(" ")[0].split("-");
-        console.log(dateData, "***");
         const [year, month, day] = dateData;
         const formattedDate = `${monthsList[month - 1]} ${day}, ${year}`;
         countryData.date = formattedDate;
-        console.log(formattedDate);
       })
       .catch((error) => console.error(error.message));
     localStorage.setItem("countryData", JSON.stringify(countryData));
