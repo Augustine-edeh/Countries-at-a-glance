@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import monthsList from "../../utils/monthsList";
 const Card = ({ countryData }) => {
   const navigate = useNavigate();
 
@@ -17,6 +18,7 @@ const Card = ({ countryData }) => {
         return response.json();
       })
       .then((data) => {
+        console.log(data);
         const hour = data.formatted.split(" ")[1].split(":")[0];
         const minute = data.formatted.split(" ")[1].split(":")[1];
         const time24hr = `${hour}:${minute}`;
@@ -41,8 +43,18 @@ const Card = ({ countryData }) => {
           console.log(countryData.time);
         }
         convertTo12HourFormat(time24hr);
-        countryData.date = data.formatted.split(" ")[0].replace(/-/g, "/");
-        console.log(countryData.date);
+        // countryData.date = data.formatted.split(" ")[0].replace(/-/g, "/");
+        const dateData = data.formatted.split(" ")[0].split("-");
+        console.log(dateData, "***");
+        const [year, month, day] = dateData;
+        const formattedDate = `${monthsList[month - 1]} ${day}, ${year}`;
+        countryData.date = formattedDate;
+        console.log(formattedDate);
+        // countryData.date = data.formatted
+        //   .split(" ")[0]
+        //   .replace(/-/g, "/".split("/"));
+        // console.log(countryData.date[0]);
+        // console.log(countryData.date);
       })
       .catch((error) => console.error(error.message));
     localStorage.setItem("countryData", JSON.stringify(countryData));
