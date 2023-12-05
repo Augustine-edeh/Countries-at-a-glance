@@ -50,11 +50,6 @@ const Card = ({ countryData }) => {
         const formattedDate = `${monthsList[month - 1]} ${day}, ${year}`;
         countryData.date = formattedDate;
         console.log(formattedDate);
-        // countryData.date = data.formatted
-        //   .split(" ")[0]
-        //   .replace(/-/g, "/".split("/"));
-        // console.log(countryData.date[0]);
-        // console.log(countryData.date);
       })
       .catch((error) => console.error(error.message));
     localStorage.setItem("countryData", JSON.stringify(countryData));
