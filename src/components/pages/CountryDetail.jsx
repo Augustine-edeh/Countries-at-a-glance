@@ -1,6 +1,7 @@
 import BackButton from "../UI/BackButton";
 import Container from "../UI/Container";
 import getBorderName from "../../utils/helper";
+import Border from "../UI/Border";
 
 const Country = () => {
   const countryInfo = JSON.parse(localStorage.getItem("countryData"));
@@ -98,23 +99,18 @@ const Country = () => {
                       {borders?.length ? (
                         borders.map((borderCountry) => {
                           return (
-                            <button
-                              key={Math.random().toString()}
-                              type="button"
-                              className="text-lightText dark:text-darkText_LightElement bg-darkText_LightElement dark:bg-darkElement py-0.5 px-5 rounded-sm shadow-lg"
-                            >
+                            <Border key={Math.random().toString()}>
                               {getBorderName(borderCountry)}
-                            </button>
+                            </Border>
                           );
                         })
                       ) : (
-                        <button
-                          type="button"
-                          title={`${countryInfo.name.common} has no border`}
-                          className="text-lightText dark:text-darkText_LightElement bg-darkText_LightElement dark:bg-darkElement py-0.5 px-5 rounded-sm shadow-lg"
+                        <Border
+                          key={Math.random().toString()}
+                          title={`${countryInfo.name.common} has no border Country`}
                         >
                           No Border
-                        </button>
+                        </Border>
                       )}
                     </span>
                   </p>
