@@ -45,7 +45,9 @@ const Card = ({ countryData }) => {
         convertTo12HourFormat(time24hr);
         // countryData.date = data.formatted.split(" ")[0].replace(/-/g, "/");
         const dateData = data.formatted.split(" ")[0].split("-");
-        const [year, month, day] = dateData;
+        let [year, month, day] = dateData;
+        // remove leading zero from day
+        day[0] === "0" ? (day = day[1]) : "";
         // Formatting date to desired format
         const formattedDate = `${monthsList[month - 1]} ${day}, ${year}`;
         countryData.date = formattedDate;
