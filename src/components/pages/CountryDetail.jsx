@@ -57,6 +57,18 @@ const Country = () => {
                       Capital:{" "}
                       <span className="font-thin">{countryInfo.capital}</span>
                     </p>
+                    <p>
+                      <span>
+                        <a
+                          target="_blank"
+                          rel="noreferrer"
+                          href={countryInfo.maps.googleMaps}
+                          className="text-blue-600 dark:text-darkLink hover:underline"
+                        >
+                          Map of {countryInfo.name.common}
+                        </a>
+                      </span>
+                    </p>
                   </div>
 
                   <div>

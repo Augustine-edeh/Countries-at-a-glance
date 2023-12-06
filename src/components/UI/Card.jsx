@@ -1,22 +1,24 @@
 import { useNavigate } from "react-router-dom";
+import monthsList from "../../utils/monthsList";
 const Card = ({ countryData }) => {
   const navigate = useNavigate();
 
   const clickHandler = async () => {
     navigate(`${countryData.name.common}`);
     localStorage.setItem("countryData", JSON.stringify(countryData));
-
-    console.log(countryData);
+    // Fetching the time and date data for selected country
     await fetch(
       `https://api.timezonedb.com/v2.1/get-time-zone?key=XN1YFKSTBENU&format=json&by=position&lat=${countryData.capitalInfo.latlng[0]}&lng=${countryData.capitalInfo.latlng[1]}`
     )
       .then((response) => {
+        // Throw an error (when no internet connection)
         if (!response.ok) {
           throw new Error("No internet connection");
         }
         return response.json();
       })
       .then((data) => {
+        // Assigning respective time parameters from response data
         const hour = data.formatted.split(" ")[1].split(":")[0];
         const minute = data.formatted.split(" ")[1].split(":")[1];
         const time24hr = `${hour}:${minute}`;
@@ -37,14 +39,21 @@ const Card = ({ countryData }) => {
           // Construct the 12-hour format time string
           const time12hr = `${hours12}:${minutes} ${period}`;
 
+          // Assign time value to countryData object before storing to localStorage
           countryData.time = time12hr;
-          console.log(countryData.time);
         }
         convertTo12HourFormat(time24hr);
-        countryData.date = data.formatted.split(" ")[0].replace(/-/g, "/");
-        console.log(countryData.date);
+        // countryData.date = data.formatted.split(" ")[0].replace(/-/g, "/");
+        const dateData = data.formatted.split(" ")[0].split("-");
+        let [year, month, day] = dateData;
+        // remove leading zero from day
+        day[0] === "0" ? (day = day[1]) : "";
+        // Formatting date to desired format
+        const formattedDate = `${monthsList[month - 1]} ${day}, ${year}`;
+        countryData.date = formattedDate;
       })
       .catch((error) => console.error(error.message));
+    // Storing CountryData object (country Information) to localStorage
     localStorage.setItem("countryData", JSON.stringify(countryData));
   };
 
