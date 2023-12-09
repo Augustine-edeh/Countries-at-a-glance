@@ -6,20 +6,11 @@ import Container from "../UI/Container";
 import ErrorPage from "../UI/Errors UI/FetchError";
 import LoadingUI from "../UI/LoadingUI";
 import CountryNotFoundUI from "../UI/Errors UI/CountryNotFoundUI";
-const Home = (props) => {
+const Home = () => {
   const [countries, setCountries] = useState([]);
   const [result, setResult] = useState();
   const [isFetchError, setIsFetchError] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
-
-  // console.log(countries[20]);
-
-  // props.nations(countries);
-
-  const showSelectedBordeeCountry = (cca3) => {
-    console.log("@@@!");
-    countries.filter((country) => country.cca3 === cca3);
-  };
 
   const searchHandler = (searchValue) => {
     setResult(
@@ -54,7 +45,6 @@ const Home = (props) => {
       })
       .then((data) => {
         setCountries(data);
-        props.onNations(data);
         setResult(data);
       })
       .catch((error) => {
@@ -62,7 +52,7 @@ const Home = (props) => {
         setErrorMessage(error.message);
         console.log(error.message);
       });
-  });
+  }, []);
 
   return (
     <main className="p-5 md:p-10 xl:px-40 2xl:px-72">
