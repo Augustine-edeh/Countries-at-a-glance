@@ -1,15 +1,23 @@
+import { useContext } from "react";
+import CountryDetailContext from "../../store/country-detail-context";
 import BackButton from "../UI/BackButton";
 import Container from "../UI/Container";
 import getBorderName from "../../utils/helper";
 import Border from "../UI/Border";
 
 const Country = () => {
-  const countryInfo = JSON.parse(localStorage.getItem("countryData"));
+  // const countryInfo = JSON.parse(localStorage.getItem("countryData"));
+  const selectedCountryCtx = useContext(CountryDetailContext);
+  const countryInfo = selectedCountryCtx.selectedCountry;
+  console.log(countryInfo);
   const borders = countryInfo.borders;
-  const languages = Object.keys(countryInfo.languages)
-    .map((key) => countryInfo.languages[key])
-    .join(", ");
+  const languages =
+    countryInfo.languages &&
+    Object.keys(countryInfo.languages)
+      .map((key) => countryInfo.languages[key])
+      .join(", ");
 
+  // console.log(selectedCountryCtx.selectedCountry);
   return (
     <main className="p-5 md:p-10 xl:px-40 2xl:px-72">
       <Container styleClasses={"my-24 "}>
