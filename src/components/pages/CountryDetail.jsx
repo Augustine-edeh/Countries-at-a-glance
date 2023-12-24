@@ -53,14 +53,10 @@ const Country = () => {
 
             countryInfo.time = time12hr;
             setTime(time12hr);
-
-            // console.log(countryInfo.time);
           }
           convertTo12HourFormat(time24hr);
-          // console.log(countryInfo.date);
 
           let [year, month, day] = data.formatted.split(" ")[0].split("-");
-          // console.log(year, month, day);
           // remove leading zero from day
           day[0] === "0" ? (day = day[1]) : "";
           // Formatting date to desired format
@@ -68,18 +64,10 @@ const Country = () => {
           countryInfo.date = formattedDate;
           const countryDate = countryInfo.date;
           setDate(countryDate);
-          // console.log(countryDate);
         })
         .catch((error) => console.error(error.message));
-      // localStorage.setItem("countryInfo", JSON.stringify(countryInfo));
-      // se;
     };
     fetchTimeAndDateInfo();
-
-    return () => {
-      // setTimeout(() => setTime("Done!!"), 2000);
-      // console.log("rendered");
-    };
   }, [countryInfo, time, date]);
 
   return (
@@ -146,11 +134,9 @@ const Country = () => {
 
                   <div>
                     <p>
-                      {/* Time: <span>{countryInfo.time}</span> */}
                       Time: <span>{time}</span>
                     </p>
                     <p>
-                      {/* Date: <span>{countryInfo.date}</span> */}
                       Date: <span>{date}</span>
                     </p>
                     <p>
