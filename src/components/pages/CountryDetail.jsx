@@ -1,5 +1,3 @@
-// import { useContext } from "react";
-// import CountryDetailContext from "../../store/country-detail-context";
 import BackButton from "../UI/BackButton";
 import Container from "../UI/Container";
 import getBorderName from "../../utils/helper";
@@ -7,18 +5,8 @@ import Border from "../UI/Border";
 import { useLocation } from "react-router-dom";
 
 const Country = () => {
-  // const countryInfo = JSON.parse(localStorage.getItem("countryData"));
-  // const LocationState = useLocation();
-  // console.log(LocationState);
   const countryInfo = useLocation().state;
-  // const { enteredValue } = state; // Read values passed on state
-  // console.log(selectedCountyState);
-
-  // const selectedCountryCtx = useContext(CountryDetailContext);
-  // const countryInfo = selectedCountryCtx.selectedCountry;
-  // const countryInfo = selectedCountyState;
-  console.log(countryInfo);
-  // console.log();
+  // console.log(countryInfo);
   const borders = countryInfo.borders;
   const languages =
     countryInfo.languages &&
@@ -26,7 +14,6 @@ const Country = () => {
       .map((key) => countryInfo.languages[key])
       .join(", ");
 
-  // console.log(selectedCountryCtx.selectedCountry);
   return (
     <main className="p-5 md:p-10 xl:px-40 2xl:px-72">
       <Container styleClasses={"my-24 "}>

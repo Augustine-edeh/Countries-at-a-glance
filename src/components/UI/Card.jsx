@@ -1,18 +1,9 @@
-// import { useContext } from "react";
-// import CountryDetailContext from "../../store/country-detail-context";
 import { useNavigate } from "react-router-dom";
 import monthsList from "../../utils/monthsList";
 const Card = ({ countryData }) => {
-  // console.log(countryData);
-  // const selectedCountryCtx = useContext(CountryDetailContext);
   const navigate = useNavigate();
 
-  // const selectedCountry = useContext(CountryDetailContext);
-
   const clickHandler = async () => {
-    // selectedCountry.setName(countryData.name.common);
-    // selectedCountry.setSelectedCountry(countryData);
-    // console.log(selectedCountry.name);
     localStorage.setItem("countryData", JSON.stringify(countryData));
     navigate(`${countryData.name.common}`, {
       state: countryData,
