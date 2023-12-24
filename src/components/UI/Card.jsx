@@ -1,5 +1,5 @@
-import { useContext } from "react";
-import CountryDetailContext from "../../store/country-detail-context";
+// import { useContext } from "react";
+// import CountryDetailContext from "../../store/country-detail-context";
 import { useNavigate } from "react-router-dom";
 import monthsList from "../../utils/monthsList";
 const Card = ({ countryData }) => {
@@ -7,14 +7,16 @@ const Card = ({ countryData }) => {
   // const selectedCountryCtx = useContext(CountryDetailContext);
   const navigate = useNavigate();
 
-  const selectedCountry = useContext(CountryDetailContext);
+  // const selectedCountry = useContext(CountryDetailContext);
 
   const clickHandler = async () => {
-    selectedCountry.setName(countryData.name.common);
-    selectedCountry.setSelectedCountry(countryData);
-    console.log(selectedCountry.name);
+    // selectedCountry.setName(countryData.name.common);
+    // selectedCountry.setSelectedCountry(countryData);
+    // console.log(selectedCountry.name);
     localStorage.setItem("countryData", JSON.stringify(countryData));
-    navigate(`${countryData.name.common}`);
+    navigate(`${countryData.name.common}`, {
+      state: countryData,
+    });
     // Fetching the time and date data for selected country
     await fetch(
       `https://api.timezonedb.com/v2.1/get-time-zone?key=XN1YFKSTBENU&format=json&by=position&lat=${countryData.capitalInfo.latlng[0]}&lng=${countryData.capitalInfo.latlng[1]}`

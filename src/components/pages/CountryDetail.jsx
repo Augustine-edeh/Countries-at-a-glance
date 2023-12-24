@@ -1,15 +1,24 @@
-import { useContext } from "react";
-import CountryDetailContext from "../../store/country-detail-context";
+// import { useContext } from "react";
+// import CountryDetailContext from "../../store/country-detail-context";
 import BackButton from "../UI/BackButton";
 import Container from "../UI/Container";
 import getBorderName from "../../utils/helper";
 import Border from "../UI/Border";
+import { useLocation } from "react-router-dom";
 
 const Country = () => {
   // const countryInfo = JSON.parse(localStorage.getItem("countryData"));
-  const selectedCountryCtx = useContext(CountryDetailContext);
-  const countryInfo = selectedCountryCtx.selectedCountry;
+  // const LocationState = useLocation();
+  // console.log(LocationState);
+  const countryInfo = useLocation().state;
+  // const { enteredValue } = state; // Read values passed on state
+  // console.log(selectedCountyState);
+
+  // const selectedCountryCtx = useContext(CountryDetailContext);
+  // const countryInfo = selectedCountryCtx.selectedCountry;
+  // const countryInfo = selectedCountyState;
   console.log(countryInfo);
+  // console.log();
   const borders = countryInfo.borders;
   const languages =
     countryInfo.languages &&
