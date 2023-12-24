@@ -2,10 +2,15 @@ import BackButton from "../UI/BackButton";
 import Container from "../UI/Container";
 import getBorderName from "../../utils/helper";
 import Border from "../UI/Border";
+import monthsList from "../../utils/monthsList";
 import { useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const Country = () => {
+  const [time, setTime] = useState("");
+  const [date, setDate] = useState("");
   const countryInfo = useLocation().state;
+  // console.log(countryInfo.time, countryInfo.date);
   // console.log(countryInfo);
   const borders = countryInfo.borders;
   const languages =
@@ -13,6 +18,69 @@ const Country = () => {
     Object.keys(countryInfo.languages)
       .map((key) => countryInfo.languages[key])
       .join(", ");
+
+  useEffect(() => {
+    const fetchTimeAndDateInfo = async () => {
+      await fetch(
+        `https://api.timezonedb.com/v2.1/get-time-zone?key=XN1YFKSTBENU&format=json&by=position&lat=${countryInfo.capitalInfo.latlng[0]}&lng=${countryInfo.capitalInfo.latlng[1]}`
+      )
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("No internet connection");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          const hour = data.formatted.split(" ")[1].split(":")[0];
+          const minute = data.formatted.split(" ")[1].split(":")[1];
+          const time24hr = `${hour}:${minute}`;
+
+          function convertTo12HourFormat(time_24hr) {
+            // Split the time into hours and minutes
+            const [hours, minutes] = time_24hr.split(":");
+
+            // Convert hours to a number
+            const hoursNum = parseInt(hours, 10);
+
+            // Determine whether it's "am" or "pm" based on the hours
+            const period = hoursNum >= 12 ? "pm" : "am";
+
+            // Calculate the 12-hour format hours
+            const hours12 = hoursNum % 12 || 12; // 0 should be converted to 12
+
+            // Construct the 12-hour format time string
+            const time12hr = `${hours12}:${minutes} ${period}`;
+
+            countryInfo.time = time12hr;
+            setTime(time12hr);
+
+            // console.log(countryInfo.time);
+          }
+          convertTo12HourFormat(time24hr);
+          // console.log(countryInfo.date);
+
+          let [year, month, day] = data.formatted.split(" ")[0].split("-");
+          // console.log(year, month, day);
+          // remove leading zero from day
+          day[0] === "0" ? (day = day[1]) : "";
+          // Formatting date to desired format
+          const formattedDate = `${monthsList[month - 1]} ${day}, ${year}`;
+          countryInfo.date = formattedDate;
+          const countryDate = countryInfo.date;
+          setDate(countryDate);
+          // console.log(countryDate);
+        })
+        .catch((error) => console.error(error.message));
+      // localStorage.setItem("countryInfo", JSON.stringify(countryInfo));
+      // se;
+    };
+    fetchTimeAndDateInfo();
+
+    return () => {
+      // setTimeout(() => setTime("Done!!"), 2000);
+      // console.log("rendered");
+    };
+  }, [countryInfo, time, date]);
 
   return (
     <main className="p-5 md:p-10 xl:px-40 2xl:px-72">
@@ -78,10 +146,12 @@ const Country = () => {
 
                   <div>
                     <p>
-                      Time: <span>{countryInfo.time}</span>
+                      {/* Time: <span>{countryInfo.time}</span> */}
+                      Time: <span>{time}</span>
                     </p>
                     <p>
-                      Date: <span>{countryInfo.date}</span>
+                      {/* Date: <span>{countryInfo.date}</span> */}
+                      Date: <span>{date}</span>
                     </p>
                     <p>
                       Top Level Domain:{" "}
