@@ -10,8 +10,6 @@ const Country = () => {
   const [time, setTime] = useState("");
   const [date, setDate] = useState("");
   const countryInfo = useLocation().state;
-  // console.log(countryInfo.time, countryInfo.date);
-  // console.log(countryInfo);
   const borders = countryInfo.borders;
   const languages =
     countryInfo.languages &&
@@ -133,7 +131,9 @@ const Country = () => {
                   </div>
 
                   <div>
-                    <p>
+                    <p
+                      title={`Time in ${countryInfo.name.common}'s capital- ${countryInfo.capital}`}
+                    >
                       Time: <span>{time}</span>
                     </p>
                     <p>
