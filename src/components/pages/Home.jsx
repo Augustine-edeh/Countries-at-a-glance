@@ -50,7 +50,7 @@ const Home = () => {
       .catch((error) => {
         setIsFetchError(true);
         setErrorMessage(error.message);
-        console.log(error.message);
+        console.error(error.message);
       });
   }, []);
 
@@ -76,8 +76,11 @@ const Home = () => {
                   .toUpperCase()
                   .localeCompare(b.name.common.toUpperCase())
               )
-              .map((country) => (
-                <Card countryData={country} key={Math.random().toString()} />
+              .map((countryElem) => (
+                <Card
+                  countryData={countryElem}
+                  key={Math.random().toString()}
+                />
               ))
           ) : (
             <CountryNotFoundUI />
