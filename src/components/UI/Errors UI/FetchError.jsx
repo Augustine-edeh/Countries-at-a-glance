@@ -6,8 +6,8 @@ const ErrorPage = ({ errorMessage }) => {
       </h1>
       <p className="mb-5">{errorMessage}</p>
       <p className="border-r border-l border-gray-400 dark:border-gray-600 px-3 ">
-        This may be due to a server error from our end. Please try refreshing
-        the page after some time.
+        This may be due a problem with your internet connection or a server
+        error from our end. Please try refreshing the page after some time.
       </p>
     </div>
   );
