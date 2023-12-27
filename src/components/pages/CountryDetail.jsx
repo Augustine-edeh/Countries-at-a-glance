@@ -17,6 +17,17 @@ const Country = () => {
       .map((key) => countryInfo.languages[key])
       .join(", ");
 
+  const currencies =
+    countryInfo.currencies &&
+    Object.keys(countryInfo.currencies)
+      .map(
+        (key) =>
+          `${countryInfo.currencies[key].name} (${countryInfo.currencies[key].symbol})`
+      )
+      .join(", ");
+
+  console.log(currencies);
+
   useEffect(() => {
     const fetchTimeAndDateInfo = async () => {
       await fetch(
@@ -101,7 +112,7 @@ const Country = () => {
                     <p>
                       Population:{" "}
                       <span className="font-thin">
-                        {countryInfo.population}
+                        {countryInfo.population.toLocaleString()}
                       </span>
                     </p>
                     <p>
@@ -144,7 +155,8 @@ const Country = () => {
                       <span className="font-thin">{countryInfo.tld}</span>
                     </p>
                     <p>
-                      Currencies: <span className="font-thin">Euro</span>
+                      Currencies:{" "}
+                      <span className="font-thin">{currencies}</span>
                     </p>
                     <p>
                       Languages: <span className="font-thin">{languages}</span>
