@@ -112,7 +112,7 @@ const Country = () => {
                     <p>
                       Population:{" "}
                       <span className="font-thin">
-                        {countryInfo.population}
+                        {countryInfo.population.toLocaleString()}
                       </span>
                     </p>
                     <p>
