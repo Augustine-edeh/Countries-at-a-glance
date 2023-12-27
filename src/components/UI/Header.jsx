@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [theme, setTheme] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
@@ -59,9 +61,9 @@ const Header = () => {
 
   return (
     <header className="flex justify-between items-center shadow-md py-6 px-5 md:px-10 xl:px-40 2xl:px-72 text-lightText dark:text-darkText_LightElement bg-lightBg dark:bg-darkElement fixed w-full z-10">
-      <a href="/" className="font-bold text-lg">
+      <button className="font-bold text-lg" onClick={() => navigate("/")}>
         Countries at a Glance
-      </a>
+      </button>
       <div className="flex gap-2 cursor-pointer" onClick={themeSwitchHandler}>
         <span className="grid place-content-center">
           <button type="button" className="grid place-content-center h-7 w-7">
