@@ -32,6 +32,15 @@ To begin using Countries at a Glance, follow these steps:
 - **Light/Dark Mode:** Seamlessly transition between light and dark modes, adapting to the user's device theme by default.
 - **Dynamic Theming:** Automatically adjusts to the user's device theme preference for a personalized experience.
 
+## Keyboard Shortcuts
+
+Users can quickly switch between light and dark modes using the following shortcut keys:
+
+- **Windows/Linux:** Press `Ctrl + Enter`
+- **Mac OS:** Press `Cmd + Return`
+
+Simply use these shortcuts to toggle between light and dark modes for a personalized viewing experience.
+
 ## Usage
 
 1. **Search:**
