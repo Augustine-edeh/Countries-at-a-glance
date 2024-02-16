@@ -26,8 +26,6 @@ const Country = () => {
       )
       .join(", ");
 
-  console.log(currencies);
-
   useEffect(() => {
     const fetchTimeAndDateInfo = async () => {
       await fetch(
