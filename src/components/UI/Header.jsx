@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useHotkeys } from "react-hotkeys-hook";
 
 const Header = () => {
   const [theme, setTheme] = useState(null);
@@ -54,6 +55,12 @@ const Header = () => {
       />
     </svg>
   );
+
+  // Toggle theme change when shortcut keys: (Ctrl+Enter) or (Cmd+Enter), are pressed
+  useHotkeys("mod+enter", (e) => {
+    e.preventDefault();
+    themeSwitchHandler();
+  });
 
   const themeSwitchHandler = () => {
     setTheme(theme === "dark" ? "light" : "dark");
